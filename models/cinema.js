@@ -31,4 +31,25 @@ Cinema.prototype.filmExistsByYear = function (filmYear) {
   return result;
 }
 
+Cinema.prototype.filmLength = function (filmLength) {
+  const result = this.films.every ((film) => {
+    return film.length > filmLength;
+  });
+  return result;
+}
+
+Cinema.prototype.filmsTotalLength = function (){
+  const result = this.films.reduce ((runningTotal, film) => {
+    return runningTotal + film.length;
+  }, 0 );
+  return result;
+}
+
+Cinema.prototype.filmsByProperty = function (name, value) {
+  const result = this.films.filter((film) => {
+    return film[name] === value;
+  })
+  return result;
+}
+
 module.exports = Cinema;
