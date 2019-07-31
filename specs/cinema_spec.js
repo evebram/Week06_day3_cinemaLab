@@ -41,9 +41,8 @@ describe('Cinema', function () {
   });
 
   it('should be able to filter films by genre', function (){
-    const genre = [moonlight, trainspotting]
-    const actual = cinema.findFilmByGenre('drama');
-    assert.deepStrictEqual(actual, genre);
+    const actual = cinema.filmsByProperty('genre', 'drama');
+    assert.deepStrictEqual(actual, [moonlight, trainspotting]);
   });
 
 
